@@ -11285,4 +11285,7 @@
   body.sidebar-toggled footer.sticky-footer {
     width: 100%;
   }
+  .style_last{
+    background-color: rgba(0, 0, 0, 0.2);
+  }
   

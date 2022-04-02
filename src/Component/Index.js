@@ -1,10 +1,19 @@
-import './css/shop.css'
-import './css/home.css'
-import'./vendor/themify-icons/themify-icons.css'
-import'./vendor/fontawesome-free/css/all.min.css'
-import './vendor/MDB_4/css/bootstrap.min.css'
-import './vendor/MDB_4/css/mdb.min.css'
 import { Outlet } from "react-router-dom"
+import logo from './img/3.jpg';
+import pthanh from './img/pthanh.jpg';
+import ttrang from './img/ttrang.jpg';
+import nphu from './img/nphu.jpg';
+import phonganrieng from './img/phonganrieng.jfif';
+import viewxungquanh from './img/viewxungquanh.jfif';
+import bar from './img/bar.jfif';
+import noithat from './img/noithat.jfif';
+import voucher from './img/voucher.jfif';
+import b2 from './img/b2.jfif';
+import b3 from './img/b3.jfif';
+import b4 from './img/b4.jfif';
+import phonganchinh from './img/phonganchinh.png';
+import terrace from './img/terrace.png';
+import twitter from './img/twitter.png';
 
 
 function Index(props) {
@@ -12,7 +21,7 @@ function Index(props) {
     <div id="page-top">
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div className="container">
-            <a className="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." ></img></a>
+            <a className="navbar-brand" href="#page-top"><img src={logo} alt="..." ></img></a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i className="fas fa-bars ms-1"></i>
@@ -31,17 +40,17 @@ function Index(props) {
 
     <header className="masthead">
         <div className="container">
-            <div className="masthead-subheading">Welcome To Our Studio!</div>
-            <div className="masthead-heading text-uppercase">It's Nice To Meet You</div>
-            <a className="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+            <div className="masthead-subheading">Chào mừng đến với chúng tôi!</div>
+            <div className="masthead-heading text-uppercase">GonT hân hạnh phục vụ</div>
+            <a className="btn btn-primary btn-xl text-uppercase" href="#services">Đặt chỗ ngay</a>
         </div>
     </header>
 
     <section className="page-section" id="services">
         <div className="container">
             <div className="text-center">
-                <h2 className="section-heading text-uppercase">Services</h2>
-                <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 className="section-heading text-uppercase">Dịch Vụ</h2>
+                <h3 className="section-subheading text-muted line_h3">Dịch Vụ Cao Cấp Tại GonT</h3>
             </div>
             <div className="row text-center">
                 <div className="col-md-4">
@@ -49,24 +58,24 @@ function Index(props) {
                         <i className="fas fa-circle fa-stack-2x text-primary"></i>
                         <i className="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 className="my-3">E-Commerce</h4>
-                    <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 className="my-3">Thực Đơn Tại GonT</h4>
+                    <p className="text-muted">Tận hưởng những món ăn mang tính biểu tượng của GonT với thực đơn được thiết kế riêng bởi đội ngũ đầu bếp hàng đầu giàu kinh nghiệm.</p>
                 </div>
                 <div className="col-md-4">
                     <span className="fa-stack fa-4x">
                         <i className="fas fa-circle fa-stack-2x text-primary"></i>
                         <i className="fas fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 className="my-3">Responsive Design</h4>
-                    <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 className="my-3">Đặt Chỗ</h4>
+                    <p className="text-muted">Trải nghiệm dịch vụ đẳng cấp trong không gian đầy tính nghệ thuật của GonT với một hành trình trải nghiệm mang đậm dấu ấn cá nhân.</p>
                 </div>
                 <div className="col-md-4">
                     <span className="fa-stack fa-4x">
                         <i className="fas fa-circle fa-stack-2x text-primary"></i>
                         <i className="fas fa-lock fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 className="my-3">Web Security</h4>
-                    <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 className="my-3">Giao Hàng</h4>
+                    <p className="text-muted">Tận hưởng ẩm thực trứ danh của GonT ngay tại nhà. Giờ đây, thưởng thức món ăn yêu thích của bạn tại nhà thật dễ dàng,  còn kèm theo dịch vụ đậm chất cá nhân của nhà Gon.</p>
                 </div>
             </div>
         </div>
@@ -75,8 +84,8 @@ function Index(props) {
     <section className="page-section bg-light" id="portfolio">
         <div className="container">
             <div className="text-center">
-                <h2 className="section-heading text-uppercase">Portfolio</h2>
-                <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 className="section-heading text-uppercase">Các Khu Vực trong GonT</h2>
+                <h3 className="section-subheading text-muted line_h3">GonT, nhà hàng mang phong cách trattoria, đã được nâng cấp thành phòng ăn của biệt thự, nơi lý tưởng để bạn gặp gỡ và giao lưu với bạn bè hay đối tác trong khung cảnh cổ điển với lối bài trí đương đại ấm cúng.</h3>
             </div>
             <div className="row">
                 <div className="col-lg-4 col-sm-6 mb-4">
@@ -86,11 +95,11 @@ function Index(props) {
                             <div className="portfolio-hover">
                                 <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img className="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." ></img>
+                            <img className="img-fluid" src={phonganchinh} alt="..." ></img>
                         </a>
                         <div className="portfolio-caption">
-                            <div className="portfolio-caption-heading">Threads</div>
-                            <div className="portfolio-caption-subheading text-muted">Illustration</div>
+                            <div className="portfolio-caption-heading">Phòng ăn chính </div>
+                            <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
                         </div>
                     </div>
                 </div>
@@ -101,11 +110,11 @@ function Index(props) {
                             <div className="portfolio-hover">
                                 <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img className="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." ></img>
+                            <img className="img-fluid" src={bar} alt="..." ></img>
                         </a>
                         <div className="portfolio-caption">
-                            <div className="portfolio-caption-heading">Explore</div>
-                            <div className="portfolio-caption-subheading text-muted">Graphic Design</div>
+                            <div className="portfolio-caption-heading">Bar</div>
+                            <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
                         </div>
                     </div>
                 </div>
@@ -116,11 +125,11 @@ function Index(props) {
                             <div className="portfolio-hover">
                                 <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img className="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." ></img>
+                            <img className="img-fluid" src={noithat} alt="..." ></img>
                         </a>
                         <div className="portfolio-caption">
-                            <div className="portfolio-caption-heading">Finish</div>
-                            <div className="portfolio-caption-subheading text-muted">Identity</div>
+                            <div className="portfolio-caption-heading">Nội Thất</div>
+                            <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
                         </div>
                     </div>
                 </div>
@@ -131,11 +140,11 @@ function Index(props) {
                             <div className="portfolio-hover">
                                 <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img className="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." ></img>
+                            <img className="img-fluid" src={terrace} alt="..." ></img>
                         </a>
                         <div className="portfolio-caption">
-                            <div className="portfolio-caption-heading">Lines</div>
-                            <div className="portfolio-caption-subheading text-muted">Branding</div>
+                            <div className="portfolio-caption-heading">Terrace</div>
+                            <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
                         </div>
                     </div>
                 </div>
@@ -146,11 +155,11 @@ function Index(props) {
                             <div className="portfolio-hover">
                                 <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img className="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." ></img>
+                            <img className="img-fluid" src={phonganrieng} alt="..." ></img>
                         </a>
                         <div className="portfolio-caption">
-                            <div className="portfolio-caption-heading">Southwest</div>
-                            <div className="portfolio-caption-subheading text-muted">Website Design</div>
+                            <div className="portfolio-caption-heading">Phòng ăn riêng</div>
+                            <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
                         </div>
                     </div>
                 </div>
@@ -161,11 +170,11 @@ function Index(props) {
                             <div className="portfolio-hover">
                                 <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img className="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." ></img>
+                            <img className="img-fluid" src={viewxungquanh} alt="..." ></img>
                         </a>
                         <div className="portfolio-caption">
-                            <div className="portfolio-caption-heading">Window</div>
-                            <div className="portfolio-caption-subheading text-muted">Photography</div>
+                            <div className="portfolio-caption-heading">Cảnh xung quanh</div>
+                            <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
                         </div>
                     </div>
                 </div>
@@ -176,46 +185,46 @@ function Index(props) {
     <section className="page-section" id="about">
         <div className="container">
             <div className="text-center">
-                <h2 className="section-heading text-uppercase">About</h2>
-                <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 className="section-heading text-uppercase">Áp dụng voucher</h2>
+                <h3 className="section-subheading text-muted line_h3">Áp Dụng Voucher thật Đơn Giản.</h3>
             </div>
             <ul className="timeline">
                 <li>
-                    <div className="timeline-image"><img className="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." ></img></div>
+                    <div className="timeline-image"><img className="rounded-circle img-fluid img-fluid-vuong" src={voucher} alt="..." ></img></div>
                     <div className="timeline-panel">
                         <div className="timeline-heading">
-                            <h4>2009-2011</h4>
-                            <h4 className="subheading">Our Humble Beginnings</h4>
+                            <h4>Bước 1:</h4>
+                            <h4 className="subheading">Nhận voucher</h4>
                         </div>
                         <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                     </div>
                 </li>
                 <li className="timeline-inverted">
-                    <div className="timeline-image"><img className="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." ></img></div>
+                    <div className="timeline-image"><img className="rounded-circle img-fluid img-fluid-vuong" src={b2} alt="..." ></img></div>
                     <div className="timeline-panel">
                         <div className="timeline-heading">
-                            <h4>March 2011</h4>
-                            <h4 className="subheading">An Agency is Born</h4>
+                            <h4>Bước 2:</h4>
+                            <h4 className="subheading">Nhập voucher vào phiếu thanh toán</h4>
                         </div>
                         <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                     </div>
                 </li>
                 <li>
-                    <div className="timeline-image"><img className="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." ></img></div>
+                    <div className="timeline-image"><img className="rounded-circle img-fluid img-fluid-vuong" src={b3} alt="..." ></img></div>
                     <div className="timeline-panel">
                         <div className="timeline-heading">
-                            <h4>December 2015</h4>
-                            <h4 className="subheading">Transition to Full Service</h4>
+                            <h4>Bước 3:</h4>
+                            <h4 className="subheading">Chờ hệ thống áp dụng voucher</h4>
                         </div>
                         <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                     </div>
                 </li>
                 <li className="timeline-inverted">
-                    <div className="timeline-image"><img className="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." ></img></div>
+                    <div className="timeline-image"><img className="rounded-circle img-fluid img-fluid-vuong" src={b4} alt="..." ></img></div>
                     <div className="timeline-panel">
                         <div className="timeline-heading">
-                            <h4>July 2020</h4>
-                            <h4 className="subheading">Phase Two Expansion</h4>
+                            <h4>Bước 4:</h4>
+                            <h4 className="subheading">Tận hưởng dịch vụ tại GonT</h4>
                         </div>
                         <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                     </div>
@@ -223,11 +232,11 @@ function Index(props) {
                 <li className="timeline-inverted">
                     <div className="timeline-image">
                         <h4>
-                            Be Part
+                            Hen gặp
                             <br ></br>
-                            Of Our
+                            lại bạn
                             <br ></br>
-                            Story!
+                            tại GonT
                         </h4>
                     </div>
                 </li>
@@ -238,15 +247,15 @@ function Index(props) {
     <section className="page-section bg-light" id="team">
         <div className="container">
             <div className="text-center">
-                <h2 className="section-heading text-uppercase">Our Amazing Team</h2>
-                <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 className="section-heading text-uppercase">Nhân Vật Tiêu Biểu</h2>
+                <h3 className="section-subheading text-muted line_h3">Với Tâm Huyết Và Làm Việc Nhiều Năm Tại Paris, ấp ủ niềm đam mê ẩm thực và rèn giũa kỹ năng nấu nướng tại các nhà hàng nổi tiếng trong khu vực.</h3>
             </div>
             <div className="row">
                 <div className="col-lg-4">
                     <div className="team-member">
-                        <img className="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." ></img>
-                        <h4>Parveen Anand</h4>
-                        <p className="text-muted">Lead Designer</p>
+                        <img className="mx-auto rounded-circle" src={ttrang} alt="..." ></img>
+                        <h4>Trang</h4>
+                        <p className="text-muted">Nguyễn Thị Thùy Trang</p>
                         <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i className="fab fa-twitter"></i></a>
                         <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i className="fab fa-facebook-f"></i></a>
                         <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i className="fab fa-linkedin-in"></i></a>
@@ -254,9 +263,9 @@ function Index(props) {
                 </div>
                 <div className="col-lg-4">
                     <div className="team-member">
-                        <img className="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." ></img>
-                        <h4>Diana Petersen</h4>
-                        <p className="text-muted">Lead Marketer</p>
+                        <img className="mx-auto rounded-circle" src={pthanh} alt="..." ></img>
+                        <h4>Thanh</h4>
+                        <p className="text-muted">Nguyễn Phúc Thanh</p>
                         <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i className="fab fa-twitter"></i></a>
                         <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i className="fab fa-facebook-f"></i></a>
                         <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i className="fab fa-linkedin-in"></i></a>
@@ -264,9 +273,9 @@ function Index(props) {
                 </div>
                 <div className="col-lg-4">
                     <div className="team-member">
-                        <img className="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." ></img>
-                        <h4>Larry Parker</h4>
-                        <p className="text-muted">Lead Developer</p>
+                        <img className="mx-auto rounded-circle" src={nphu} alt="..." ></img>
+                        <h4>Phú</h4>
+                        <p className="text-muted">Trần Ngọc Phú</p>
                         <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i className="fab fa-twitter"></i></a>
                         <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i className="fab fa-facebook-f"></i></a>
                         <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i className="fab fa-linkedin-in"></i></a>
@@ -274,7 +283,7 @@ function Index(props) {
                 </div>
             </div>
             <div className="row">
-                <div className="col-lg-8 mx-auto text-center"><p className="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+                <div className="col-lg-8 mx-auto text-center"><p className="large text-muted"> Trước khi gia nhập GonT, các thành viên đã góp phần tạo nên thành công cho đội ngũ ẩm thực của hai khách sạn danh giá Armani Hotel Dubai và Grand Hyatt Dubai.</p></div>
             </div>
         </div>
     </section>
@@ -282,17 +291,17 @@ function Index(props) {
     <div className="py-5">
         <div className="container">
             <div className="row align-items-center">
-                <div className="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img className="img-fluid img-brand d-block mx-auto" src="assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" ></img></a>
+                <div className="btn_link btn-outline-light col-md-3 col-sm-2-4 my-3 text-center">
+                    <a href="#!"><i className="fab fa-facebook-f"></i></a>
                 </div>
-                <div className="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img className="img-fluid img-brand d-block mx-auto" src="assets/img/logos/google.svg" alt="..." aria-label="Google Logo" ></img></a>
+                <div className="btn_link btn-outline-light col-md-3 col-sm-2-4 my-3 text-center ">
+                    <a href="#!"><i className="fab fa-twitter"></i></a>
                 </div>
-                <div className="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img className="img-fluid img-brand d-block mx-auto" src="assets/img/logos/facebook.svg" alt="..." aria-label="Facebook Logo" ></img></a>
+                <div className="btn_link btn-outline-light col-md-3 col-sm-2-4 my-3 text-center ">
+                    <a href="#!"><i className="fab fa-instagram"></i></a>
                 </div>
-                <div className="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img className="img-fluid img-brand d-block mx-auto" src="assets/img/logos/ibm.svg" alt="..." aria-label="IBM Logo" ></img></a>
+                <div className="btn_link btn-outline-light col-md-3 col-sm-2-4 my-3 text-center color_youtube">
+                    <a href="#!"><i className="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -302,7 +311,7 @@ function Index(props) {
         <div className="container">
             <div className="text-center">
                 <h2 className="section-heading text-uppercase">Contact Us</h2>
-                <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h3 className="section-subheading text-muted line_h3">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
             <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                 <div className="row align-items-stretch mb-5">
@@ -349,22 +358,174 @@ function Index(props) {
         </div>
     </section>
 
-    <footer className="footer py-4">
-        <div className="container">
-            <div className="row align-items-center">
-                <div className="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
-                <div className="col-lg-4 my-3 my-lg-0">
-                    <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-                    <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-                    <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+    <footer className="bg-dark text-center text-white">
+        <div className="container p-4">       
+            <section className="mb-4">
+        
+                <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i className="fab fa-facebook-f"></i>
+                </a>
+
+
+                <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i className="fab fa-twitter"></i>
+                </a>
+
+
+                <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i className="fab fa-google"></i>
+                </a>
+
+
+                <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i className="fab fa-instagram"></i>
+                </a>
+
+
+                <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i className="fab fa-linkedin-in"></i>
+                </a>
+
+                <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i className="fab fa-github"></i>
+                </a>
+            </section>
+
+            <section className="">
+            <form action="">
+
+                <div className="row d-flex justify-content-center">
+
+                <div className="col-auto">
+                    <p className="pt-2">
+                    <strong>Sign up for our newsletter</strong>
+                    </p>
                 </div>
-                <div className="col-lg-4 text-lg-end">
-                    <a className="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                    <a className="link-dark text-decoration-none" href="#!">Terms of Use</a>
+
+                <div className="col-md-5 col-12">
+
+                    <div className="form-outline form-white mb-4">
+                    <input className="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" ></input>
+                    <label className="form-label" for="form5Example21">Email address</label>
+                    </div>
                 </div>
+        
+                <div className="col-auto">
+        
+                    <button type="submit" className="btn btn-outline-light mb-4">
+                    Subscribe
+                    </button>
+                </div>
+
+                </div>
+
+            </form>
+            </section>
+
+            <section className="mb-4">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+                repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+                eum harum corrupti dicta, aliquam sequi voluptate quas.
+            </p>
+            </section>
+
+            <section className="">
+
+            <div className="row">
+        
+                <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 className="text-uppercase">Links</h5>
+
+                <ul className="list-unstyled mb-0">
+                    <li>
+                    <a href="#!" className="text-white">Link 1</a>
+                    </li>
+                    <li>
+                    <a href="#!" className="text-white">Link 2</a>
+                    </li>
+                    <li>
+                    <a href="#!" className="text-white">Link 3</a>
+                    </li>
+                    <li>
+                    <a href="#!" className="text-white">Link 4</a>
+                    </li>
+                </ul>
+                </div>
+        
+                <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 className="text-uppercase">Links</h5>
+
+                <ul className="list-unstyled mb-0">
+                    <li>
+                    <a href="#!" className="text-white">Link 1</a>
+                    </li>
+                    <li>
+                    <a href="#!" className="text-white">Link 2</a>
+                    </li>
+                    <li>
+                    <a href="#!" className="text-white">Link 3</a>
+                    </li>
+                    <li>
+                    <a href="#!" className="text-white">Link 4</a>
+                    </li>
+                </ul>
+                </div>
+        
+                <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 className="text-uppercase">Links</h5>
+
+                <ul className="list-unstyled mb-0">
+                    <li>
+                    <a href="#!" className="text-white">Link 1</a>
+                    </li>
+                    <li>
+                    <a href="#!" className="text-white">Link 2</a>
+                    </li>
+                    <li>
+                    <a href="#!" className="text-white">Link 3</a>
+                    </li>
+                    <li>
+                    <a href="#!" className="text-white">Link 4</a>
+                    </li>
+                </ul>
+                </div>
+        
+                <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 className="text-uppercase">Links</h5>
+
+                <ul className="list-unstyled mb-0">
+                    <li>
+                    <a href="#!" className="text-white">Link 1</a>
+                    </li>
+                    <li>
+                    <a href="#!" className="text-white">Link 2</a>
+                    </li>
+                    <li>
+                    <a href="#!" className="text-white">Link 3</a>
+                    </li>
+                    <li>
+                    <a href="#!" className="text-white">Link 4</a>
+                    </li>
+                </ul>
+                </div>
+
             </div>
+
+            </section>
+
         </div>
+
+
+
+        <div className="text-center p-3 style_last" >
+            © 2020 Copyright: 
+            <a className="text-white" href="https://mdbootstrap.com/"> GonT</a>
+        </div>
+
     </footer>
+
+    
 
     <div className="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div className="modal-dialog">
