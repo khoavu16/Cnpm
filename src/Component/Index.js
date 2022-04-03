@@ -46,40 +46,24 @@ function Index(props) {
         </div>
     </header>
 
-    <section className="page-section" id="services">
-        <div className="container">
-            <div className="text-center">
-                <h2 className="section-heading text-uppercase">Dịch Vụ</h2>
-                <h3 className="section-subheading text-muted line_h3">Dịch Vụ Cao Cấp Tại GonT</h3>
-            </div>
-            <div className="row text-center">
-                <div className="col-md-4">
-                    <span className="fa-stack fa-4x">
-                        <i className="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i className="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 className="my-3">Thực Đơn Tại GonT</h4>
-                    <p className="text-muted">Tận hưởng những món ăn mang tính biểu tượng của GonT với thực đơn được thiết kế riêng bởi đội ngũ đầu bếp hàng đầu giàu kinh nghiệm.</p>
-                </div>
-                <div className="col-md-4">
-                    <span className="fa-stack fa-4x">
-                        <i className="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i className="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 className="my-3">Đặt Chỗ</h4>
-                    <p className="text-muted">Trải nghiệm dịch vụ đẳng cấp trong không gian đầy tính nghệ thuật của GonT với một hành trình trải nghiệm mang đậm dấu ấn cá nhân.</p>
-                </div>
-                <div className="col-md-4">
-                    <span className="fa-stack fa-4x">
-                        <i className="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i className="fas fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 className="my-3">Giao Hàng</h4>
-                    <p className="text-muted">Tận hưởng ẩm thực trứ danh của GonT ngay tại nhà. Giờ đây, thưởng thức món ăn yêu thích của bạn tại nhà thật dễ dàng,  còn kèm theo dịch vụ đậm chất cá nhân của nhà Gon.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
+
+
+
+
+
+
+
+    <Outlet/>
+
+
+
+
+
+
+
+
+
  
     <section className="page-section bg-light" id="portfolio">
         <div className="container">
@@ -358,172 +342,95 @@ function Index(props) {
         </div>
     </section>
 
-    <footer className="bg-dark text-center text-white">
-        <div className="container p-4">       
-            <section className="mb-4">
-        
-                <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i className="fab fa-facebook-f"></i>
-                </a>
+    <footer className="footer">
 
+			<div className="footer-top section">
+				<div className="container">
+					<div className="row">
+						<div className="col-lg-5 col-md-6 col-12">		
+							<div className="single-footer about">
+								<div className="logo">
+									<a href="index.html"><img className="img_logo" src={logo} alt="..." ></img></a>
+								</div>
+								<p className="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+								<p className="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>
+							</div>
 
-                <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i className="fab fa-twitter"></i>
-                </a>
+						</div>
+						<div className="col-lg-2 col-md-6 col-12">
+		
+							<div className="single-footer links">
+								<h4>Information</h4>
+								<ul>
+									<li><a href="#">About Us</a></li>
+									<li><a href="#">Faq</a></li>
+									<li><a href="#">Terms And Conditions</a></li>
+									<li><a href="#">Contact Us</a></li>
+									<li><a href="#">Help</a></li>
+								</ul>
+							</div>
+			
+						</div>
+						<div className="col-lg-2 col-md-6 col-12">
+			
+							<div className="single-footer links">
+								<h4>Customer Service</h4>
+								<ul>
+									<li><a href="#">Payment Methods</a></li>
+									<li><a href="#">Money-back</a></li>
+									<li><a href="#">Returns</a></li>
+									<li><a href="#">Shipping</a></li>
+									<li><a href="#">Privacy Policy</a></li>
+								</ul>
+							</div>
 
+						</div>
+						<div className="col-lg-3 col-md-6 col-12">
+		
+							<div className="single-footer social">
+								<h4>Get In Tuch</h4>
+		
+								<div className="contact">
+									<ul>
+										<li>144A - Chi Lăng.</li>
+										<li>Thành Phố Vũng Tàu.</li>
+										<li>gont@gmail.com</li>
+										<li>+033 8091 5390</li>
+									</ul>
+								</div>
+				
+								<ul>
+									<li><a href="#"><i className="ti-facebook"></i></a></li>
+									<li><a href="#"><i className="ti-twitter"></i></a></li>
+									<li><a href="#"><i className="ti-flickr"></i></a></li>
+									<li><a href="#"><i className="ti-instagram"></i></a></li>
+								</ul>
+							</div>
 
-                <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i className="fab fa-google"></i>
-                </a>
+						</div>
+					</div>
+				</div>
+			</div>
 
-
-                <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i className="fab fa-instagram"></i>
-                </a>
-
-
-                <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i className="fab fa-linkedin-in"></i>
-                </a>
-
-                <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i className="fab fa-github"></i>
-                </a>
-            </section>
-
-            <section className="">
-            <form action="">
-
-                <div className="row d-flex justify-content-center">
-
-                <div className="col-auto">
-                    <p className="pt-2">
-                    <strong>Sign up for our newsletter</strong>
-                    </p>
-                </div>
-
-                <div className="col-md-5 col-12">
-
-                    <div className="form-outline form-white mb-4">
-                    <input className="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" ></input>
-                    <label className="form-label" for="form5Example21">Email address</label>
-                    </div>
-                </div>
-        
-                <div className="col-auto">
-        
-                    <button type="submit" className="btn btn-outline-light mb-4">
-                    Subscribe
-                    </button>
-                </div>
-
-                </div>
-
-            </form>
-            </section>
-
-            <section className="mb-4">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-                repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-                eum harum corrupti dicta, aliquam sequi voluptate quas.
-            </p>
-            </section>
-
-            <section className="">
-
-            <div className="row">
-        
-                <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 className="text-uppercase">Links</h5>
-
-                <ul className="list-unstyled mb-0">
-                    <li>
-                    <a href="#!" className="text-white">Link 1</a>
-                    </li>
-                    <li>
-                    <a href="#!" className="text-white">Link 2</a>
-                    </li>
-                    <li>
-                    <a href="#!" className="text-white">Link 3</a>
-                    </li>
-                    <li>
-                    <a href="#!" className="text-white">Link 4</a>
-                    </li>
-                </ul>
-                </div>
-        
-                <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 className="text-uppercase">Links</h5>
-
-                <ul className="list-unstyled mb-0">
-                    <li>
-                    <a href="#!" className="text-white">Link 1</a>
-                    </li>
-                    <li>
-                    <a href="#!" className="text-white">Link 2</a>
-                    </li>
-                    <li>
-                    <a href="#!" className="text-white">Link 3</a>
-                    </li>
-                    <li>
-                    <a href="#!" className="text-white">Link 4</a>
-                    </li>
-                </ul>
-                </div>
-        
-                <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 className="text-uppercase">Links</h5>
-
-                <ul className="list-unstyled mb-0">
-                    <li>
-                    <a href="#!" className="text-white">Link 1</a>
-                    </li>
-                    <li>
-                    <a href="#!" className="text-white">Link 2</a>
-                    </li>
-                    <li>
-                    <a href="#!" className="text-white">Link 3</a>
-                    </li>
-                    <li>
-                    <a href="#!" className="text-white">Link 4</a>
-                    </li>
-                </ul>
-                </div>
-        
-                <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 className="text-uppercase">Links</h5>
-
-                <ul className="list-unstyled mb-0">
-                    <li>
-                    <a href="#!" className="text-white">Link 1</a>
-                    </li>
-                    <li>
-                    <a href="#!" className="text-white">Link 2</a>
-                    </li>
-                    <li>
-                    <a href="#!" className="text-white">Link 3</a>
-                    </li>
-                    <li>
-                    <a href="#!" className="text-white">Link 4</a>
-                    </li>
-                </ul>
-                </div>
-
-            </div>
-
-            </section>
-
-        </div>
-
-
-
-        <div className="text-center p-3 style_last" >
-            © 2020 Copyright: 
-            <a className="text-white" href="https://mdbootstrap.com/"> GonT</a>
-        </div>
-
-    </footer>
+			<div className="copyright">
+				<div className="container">
+					<div className="inner">
+						<div className="row">
+							<div className="col-lg-6 col-12">
+								<div className="left">
+									<p>Copyright © 2020 <a href="http://www.wpthemesgrid.com" target="_blank">GonT</a>  -  All Rights Reserved.</p>
+								</div>
+							</div>
+							<div className="col-lg-6 col-12">
+								<div className="right">
+                                <img className="img_logo_1" src={logo} alt="..."></img>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
 
     
 
@@ -678,6 +585,7 @@ function Index(props) {
 
                                 <h2 className="text-uppercase">Project Name</h2>
                                 <p className="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img src="images/logo2.png" alt="#"></img>
                                 <img className="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." ></img>
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                                 <ul className="list-inline">

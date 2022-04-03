@@ -596,14 +596,7 @@
     border-radius: 3px;
 }
 
-.header-search-select{
-    font-size: 2rem;
-    border-left: 1px solid#ccc;
-    padding-left: 16px;
-    height: 2.6rem;
-    position: relative;
-    margin-top: -10px;
-}
+
 
 .header-search-select:hover .header-search-option{
     display: block;
@@ -791,12 +784,7 @@
     background-color: rgb(245, 245, 245);
 }
 
-.header__cart-img{
-    width: 42px;
-    height: 42px;
-    margin: 12px;
-    border: 1px solid#ccc;
-}
+
 
 .header__cart-item-info{
     width: 100%;

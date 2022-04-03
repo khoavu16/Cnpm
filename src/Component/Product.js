@@ -1,51 +1,95 @@
 const Product = () => {
     return (
-    <div className="home-product home-product-item-wrapper">
-        <div className="grid__row">
-            <div className="grid__column-2-4">
-                <a href="#" className="home-product-item ">
-                    <div className="home-product-item-img"></div>
-                    <h4 className="home-product-item__name"> Tay cầm gimbal DJI Osmo Mobile 4 Combo chống rung điện thoại - Hàng chính hãng - Bảo hành 12 tháng</h4>
-                    
-                    <div className="home-product-item__price">
-                        <span className="home-product-item__price-old">1.200.000</span>
-                        <span className="home-product-item__price-current">999.000</span>
-                    </div>
+        <footer className="footer">
 
-                    <div className="home-product-item__action">
-                        <span className="home-product-item__like home-product-item__liked">
-                            <i className="home-product-item__like-icon-empty ti-heart-broken"></i>
-                            <i className="home-product-item__like-icon-fill ti-heart"></i>
-                        </span>
+			<div className="footer-top section">
+				<div className="container">
+					<div className="row">
+						<div className="col-lg-5 col-md-6 col-12">
+		
+							<div className="single-footer about">
+								<div className="logo">
+									<a href="index.html"><img src="images/logo2.png" alt="#"></img></a>
+								</div>
+								<p className="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+								<p className="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>
+							</div>
 
-                        <div className="home-product-item__rating">
-                            <i className="home-product-item__star--gold ti-star"></i>
-                            <i className="home-product-item__star--gold ti-star"></i>
-                            <i className="home-product-item__star--gold ti-star"></i>
-                            <i className="home-product-item__star--gold ti-star"></i>
-                            <i className="ti-star"></i>
-                        </div>
-                        <span className="home-product-item__sold"> 88 da ban</span>
-                    </div>
+						</div>
+						<div className="col-lg-2 col-md-6 col-12">
+		
+							<div className="single-footer links">
+								<h4>Information</h4>
+								<ul>
+									<li><a href="#">About Us</a></li>
+									<li><a href="#">Faq</a></li>
+									<li><a href="#">Terms And Conditions</a></li>
+									<li><a href="#">Contact Us</a></li>
+									<li><a href="#">Help</a></li>
+								</ul>
+							</div>
+			
+						</div>
+						<div className="col-lg-2 col-md-6 col-12">
+			
+							<div className="single-footer links">
+								<h4>Customer Service</h4>
+								<ul>
+									<li><a href="#">Payment Methods</a></li>
+									<li><a href="#">Money-back</a></li>
+									<li><a href="#">Returns</a></li>
+									<li><a href="#">Shipping</a></li>
+									<li><a href="#">Privacy Policy</a></li>
+								</ul>
+							</div>
 
-                    <div className="home-product-item__origin">
-                        <span className="home-product-item__brand"> Whoo</span>
-                        <span className="home-product-item__origin-name">Nhat Ban</span>
-                    </div>
+						</div>
+						<div className="col-lg-3 col-md-6 col-12">
+		
+							<div className="single-footer social">
+								<h4>Get In Tuch</h4>
+		
+								<div className="contact">
+									<ul>
+										<li>NO. 342 - London Oxford Street.</li>
+										<li>012 United Kingdom.</li>
+										<li>info@eshop.com</li>
+										<li>+032 3456 7890</li>
+									</ul>
+								</div>
+				
+								<ul>
+									<li><a href="#"><i className="ti-facebook"></i></a></li>
+									<li><a href="#"><i className="ti-twitter"></i></a></li>
+									<li><a href="#"><i className="ti-flickr"></i></a></li>
+									<li><a href="#"><i className="ti-instagram"></i></a></li>
+								</ul>
+							</div>
 
-                    <div className="home-product-item__favourite">
-                        <i className="ti-check"></i>
-                        <span>Yeu thich</span> 
-                    </div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-                    <div className="home-product-item__sale-off">
-                        <span className="home-product-item__sale-off-percent">10%</span>
-                        <span className="home-product-item__sale-off-label">Giảm</span>
-                    </div>
-                </a>
-            </div>      
-        </div>                              
-    </div>
+			<div className="copyright">
+				<div className="container">
+					<div className="inner">
+						<div className="row">
+							<div className="col-lg-6 col-12">
+								<div className="left">
+									<p>Copyright © 2020 <a href="http://www.wpthemesgrid.com" target="_blank">Wpthemesgrid</a>  -  All Rights Reserved.</p>
+								</div>
+							</div>
+							<div className="col-lg-6 col-12">
+								<div className="right">
+									<img src="images/payments.png" alt="#"></img>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
   )
 }
 

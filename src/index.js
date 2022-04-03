@@ -11,7 +11,7 @@ import Product from './Component/Product';
 import ProductDetails from './Component/ProductDetails'
 import FrameProduct from './Component/FrameProduct';
 import './Component/css/shop.css'
-// import './Component/css/home.css'
+import './Component/css/home.css'
 // import'./Component/vendor/themify-icons/themify-icons.css'
 // import'./Component/vendor/fontawesome-free/css/all.min.css'
 // import './Component/vendor/MDB_4/css/bootstrap.min.css'
