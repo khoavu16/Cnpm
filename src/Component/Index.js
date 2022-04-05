@@ -33,10 +33,54 @@ function Index(props) {
                     <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
                     <li className="nav-item"><a className="nav-link" href="#team">Team</a></li>
                     <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
-                </ul>
+                </ul >
             </div>
         </div>
     </nav>
+    {/* <nav className="navbar navbar-expand-lg navbar-dark fixed-top header_top cach" id="mainNav">
+        <div className="col-lg-2 col-md-3 col-12">abc</div>
+        <div className="col-lg-2 col-md-3 col-12 ">
+            <div className="right-bar">
+                <div className="sinlge-bar">
+                    <a href="#" className="single-icon"><i className="fa fa-heart-o" aria-hidden="true"></i></a>
+                </div>
+                <div className="sinlge-bar">
+                    <a href="#" className="single-icon"><i className="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                </div>
+                <div className="sinlge-bar shopping">
+                    <a href="#" className="single-icon"><i className="ti-bag"></i> <span className="total-count">2</span></a>
+
+                <div className="shopping-item">
+                    <div className="dropdown-cart-header">
+                        <span>2 Items</span>
+                        <a href="#">View Cart</a>
+                    </div>
+						<ul className="shopping-list">
+							<li>
+								<a href="#" className="remove" title="Remove this item"><i className="fa fa-remove"></i></a>
+								<a className="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></img></a>
+								<h4><a href="#">Woman Ring</a></h4>
+								<p className="quantity">1x - <span className="amount">$99.00</span></p>
+							</li>
+							<li>
+								<a href="#" className="remove" title="Remove this item"><i className="fa fa-remove"></i></a>
+								<a className="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></img></a>
+								<h4><a href="#">Woman Necklace</a></h4>
+								<p className="quantity">1x - <span className="amount">$35.00</span></p>
+							</li>
+						</ul>
+						<div className="bottom">
+							<div className="total">
+								<span>Total</span>
+								<span className="total-amount">$134.00</span>
+							</div>
+							<a href="checkout.html" className="btn animate">Checkout</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </nav> */}
 
     <header className="masthead">
         <div className="container">
@@ -68,7 +112,7 @@ function Index(props) {
     <section className="page-section bg-light" id="portfolio">
         <div className="container">
             <div className="text-center">
-                <h2 className="section-heading text-uppercase">Các Khu Vực trong GonT</h2>
+                <h2 className="section-heading text-uppercase">Nhà hàng tiêu biểu</h2>
                 <h3 className="section-subheading text-muted line_h3">GonT, nhà hàng mang phong cách trattoria, đã được nâng cấp thành phòng ăn của biệt thự, nơi lý tưởng để bạn gặp gỡ và giao lưu với bạn bè hay đối tác trong khung cảnh cổ điển với lối bài trí đương đại ấm cúng.</h3>
             </div>
             <div className="row">
@@ -82,7 +126,7 @@ function Index(props) {
                             <img className="img-fluid" src={phonganchinh} alt="..." ></img>
                         </a>
                         <div className="portfolio-caption">
-                            <div className="portfolio-caption-heading">Phòng ăn chính </div>
+                            <div className="portfolio-caption-heading">Tajmasago Buffet</div>
                             <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
                         </div>
                     </div>
@@ -97,7 +141,7 @@ function Index(props) {
                             <img className="img-fluid" src={bar} alt="..." ></img>
                         </a>
                         <div className="portfolio-caption">
-                            <div className="portfolio-caption-heading">Bar</div>
+                            <div className="portfolio-caption-heading">The LOG Restaurant</div>
                             <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
                         </div>
                     </div>
@@ -112,7 +156,7 @@ function Index(props) {
                             <img className="img-fluid" src={noithat} alt="..." ></img>
                         </a>
                         <div className="portfolio-caption">
-                            <div className="portfolio-caption-heading">Nội Thất</div>
+                            <div className="portfolio-caption-heading">Sorae Restaurant</div>
                             <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
                         </div>
                     </div>
@@ -127,7 +171,7 @@ function Index(props) {
                             <img className="img-fluid" src={terrace} alt="..." ></img>
                         </a>
                         <div className="portfolio-caption">
-                            <div className="portfolio-caption-heading">Terrace</div>
+                            <div className="portfolio-caption-heading"> Secret Garden</div>
                             <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
                         </div>
                     </div>
@@ -142,7 +186,7 @@ function Index(props) {
                             <img className="img-fluid" src={phonganrieng} alt="..." ></img>
                         </a>
                         <div className="portfolio-caption">
-                            <div className="portfolio-caption-heading">Phòng ăn riêng</div>
+                            <div className="portfolio-caption-heading">The Deck Saigon</div>
                             <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
                         </div>
                     </div>
@@ -157,7 +201,7 @@ function Index(props) {
                             <img className="img-fluid" src={viewxungquanh} alt="..." ></img>
                         </a>
                         <div className="portfolio-caption">
-                            <div className="portfolio-caption-heading">Cảnh xung quanh</div>
+                            <div className="portfolio-caption-heading">Shri – Rooftop</div>
                             <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
                         </div>
                     </div>
@@ -364,7 +408,7 @@ function Index(props) {
 								<ul>
 									<li><a href="#">About Us</a></li>
 									<li><a href="#">Faq</a></li>
-									<li><a href="#">Terms And Conditions</a></li>
+									<li><a href="#">Terms vs Conditions</a></li>
 									<li><a href="#">Contact Us</a></li>
 									<li><a href="#">Help</a></li>
 								</ul>

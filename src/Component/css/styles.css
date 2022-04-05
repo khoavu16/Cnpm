@@ -3840,6 +3840,7 @@ textarea.form-control-lg {
   display: block;
 }
 
+
 .dropdown-header {
   display: block;
   padding: 0.5rem 1rem;
@@ -11395,7 +11396,6 @@ p {
   padding-top: 1rem;
   padding-bottom: 1rem;
   background-color: #212529;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -11430,7 +11430,7 @@ p {
     padding-bottom: 0.8rem;
     border: none;
     background-color: white;
-    border-top: 4px solid rgba(1,148,243,1.00);;
+    border-top: 4px solid rgba(1,148,243,1.00);
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
   }
   #mainNav .navbar-brand {
@@ -15804,3 +15804,9 @@ Version:1.0
 	End Footer CSS
 ===============================*/
 
+.header_top{
+  margin-top: 12vh;
+  border-top: 0px !important;
+  background-color: #f6f6f6 !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}

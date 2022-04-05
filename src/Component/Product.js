@@ -1,95 +1,48 @@
 const Product = () => {
     return (
-        <footer className="footer">
+        <div className="col-lg-2 col-md-3 col-12">
+			<div className="right-bar">
 
-			<div className="footer-top section">
-				<div className="container">
-					<div className="row">
-						<div className="col-lg-5 col-md-6 col-12">
-		
-							<div className="single-footer about">
-								<div className="logo">
-									<a href="index.html"><img src="images/logo2.png" alt="#"></img></a>
-								</div>
-								<p className="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
-								<p className="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>
-							</div>
+				<div className="sinlge-bar">
+					<a href="#" className="single-icon"><i className="fa fa-heart-o" aria-hidden="true"></i></a>
+				</div>
+				<div className="sinlge-bar">
+					<a href="#" className="single-icon"><i className="fa fa-user-circle-o" aria-hidden="true"></i></a>
+				</div>
+				<div className="sinlge-bar shopping">
+					<a href="#" className="single-icon"><i className="ti-bag"></i> <span className="total-count">2</span></a>
 
+					<div className="shopping-item">
+						<div className="dropdown-cart-header">
+							<span>2 Items</span>
+							<a href="#">View Cart</a>
 						</div>
-						<div className="col-lg-2 col-md-6 col-12">
-		
-							<div className="single-footer links">
-								<h4>Information</h4>
-								<ul>
-									<li><a href="#">About Us</a></li>
-									<li><a href="#">Faq</a></li>
-									<li><a href="#">Terms And Conditions</a></li>
-									<li><a href="#">Contact Us</a></li>
-									<li><a href="#">Help</a></li>
-								</ul>
+						<ul className="shopping-list">
+							<li>
+								<a href="#" className="remove" title="Remove this item"><i className="fa fa-remove"></i></a>
+								<a className="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></img></a>
+								<h4><a href="#">Woman Ring</a></h4>
+								<p className="quantity">1x - <span className="amount">$99.00</span></p>
+							</li>
+							<li>
+								<a href="#" className="remove" title="Remove this item"><i className="fa fa-remove"></i></a>
+								<a className="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></img></a>
+								<h4><a href="#">Woman Necklace</a></h4>
+								<p className="quantity">1x - <span className="amount">$35.00</span></p>
+							</li>
+						</ul>
+						<div className="bottom">
+							<div className="total">
+								<span>Total</span>
+								<span className="total-amount">$134.00</span>
 							</div>
-			
-						</div>
-						<div className="col-lg-2 col-md-6 col-12">
-			
-							<div className="single-footer links">
-								<h4>Customer Service</h4>
-								<ul>
-									<li><a href="#">Payment Methods</a></li>
-									<li><a href="#">Money-back</a></li>
-									<li><a href="#">Returns</a></li>
-									<li><a href="#">Shipping</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-								</ul>
-							</div>
-
-						</div>
-						<div className="col-lg-3 col-md-6 col-12">
-		
-							<div className="single-footer social">
-								<h4>Get In Tuch</h4>
-		
-								<div className="contact">
-									<ul>
-										<li>NO. 342 - London Oxford Street.</li>
-										<li>012 United Kingdom.</li>
-										<li>info@eshop.com</li>
-										<li>+032 3456 7890</li>
-									</ul>
-								</div>
-				
-								<ul>
-									<li><a href="#"><i className="ti-facebook"></i></a></li>
-									<li><a href="#"><i className="ti-twitter"></i></a></li>
-									<li><a href="#"><i className="ti-flickr"></i></a></li>
-									<li><a href="#"><i className="ti-instagram"></i></a></li>
-								</ul>
-							</div>
-
+							<a href="checkout.html" className="btn animate">Checkout</a>
 						</div>
 					</div>
-				</div>
-			</div>
 
-			<div className="copyright">
-				<div className="container">
-					<div className="inner">
-						<div className="row">
-							<div className="col-lg-6 col-12">
-								<div className="left">
-									<p>Copyright © 2020 <a href="http://www.wpthemesgrid.com" target="_blank">Wpthemesgrid</a>  -  All Rights Reserved.</p>
-								</div>
-							</div>
-							<div className="col-lg-6 col-12">
-								<div className="right">
-									<img src="images/payments.png" alt="#"></img>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
-		</footer>
+		</div>
   )
 }
 
