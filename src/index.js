@@ -29,11 +29,12 @@ ReactDOM.render(
       <Routes>
         
         <Route path='/' element={<Index/>}>
-          <Route path='frameproduct' element={<FrameProduct/>}>
-            <Route path='product' element={<Product/>}></Route>
+          <Route path='frameproduct' element={<FrameProduct/>}>        
           </Route>          
           <Route path='productdetails' element={<ProductDetails/>}></Route>
         </Route>
+
+
 
         <Route path='/login' element={<Login/>}></Route>
 

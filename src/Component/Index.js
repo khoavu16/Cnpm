@@ -37,9 +37,9 @@ function Index(props) {
             </div>
         </div>
     </nav>
-    {/* <nav className="navbar navbar-expand-lg navbar-dark fixed-top header_top cach" id="mainNav">
+    <nav className="navbar navbar-expand-lg navbar-dark fixed-top header_top cach" id="mainNav">
         <div className="col-lg-2 col-md-3 col-12">abc</div>
-        <div className="col-lg-2 col-md-3 col-12 ">
+        {/* <div className="col-lg-2 col-md-3 col-12 ">
             <div className="right-bar">
                 <div className="sinlge-bar">
                     <a href="#" className="single-icon"><i className="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -79,8 +79,8 @@ function Index(props) {
 					</div>
 				</div>
 			</div>
-		</div>
-    </nav> */}
+		</div> */}
+    </nav>
 
     <header className="masthead">
         <div className="container">

@@ -14,7 +14,7 @@ function App() {
                   <div className="sidebar-brand-icon rotate-n-15">
                       <i className="fas fa-laugh-wink"></i>
                   </div>
-                  <div className="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                  <div className="sidebar-brand-text mx-3">GonT</div>
               </a>
 
               <hr className="sidebar-divider my-0"></hr>
@@ -342,7 +342,7 @@ function App() {
               <footer className="sticky-footer bg-white">
                   <div className="container my-auto">
                       <div className="copyright text-center my-auto">
-                          <span>Copyright &copy; Your Website 2020</span>
+                          <span>Copyright &copy; GonT 2022</span>
                       </div>
                   </div>
               </footer>
