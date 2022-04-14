@@ -4,7 +4,6 @@ import { Outlet } from "react-router-dom"
 
 const FrameProduct = () => {
 
-
   return (
     <div className="product-area section">   
       <section className="page-section" id="about">
@@ -221,6 +220,18 @@ const FrameProduct = () => {
             </div>
         </div>
       </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
       <section class="shop-home-list section">
         <div class="container">
