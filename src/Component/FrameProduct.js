@@ -1,11 +1,42 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import b4 from './img/b4.jfif';
 import { Outlet } from "react-router-dom"
+import axios from 'axios'
+
+
+const api = {
+  key: "f940561a277d552c3b894777566e82f2",
+  base: "https://api.openweathermap.org/data/2.5/",
+};
 
 const FrameProduct = () => {
 
+  useEffect(() => {
+    getdata();
+  }, []);
+
+  const [listrender, setlistrender] = useState([]);
+  const url = `${api.base}weather?q=HaNoi&units=metric&APPID=${api.key}`
+
+  const getdata = async () =>{
+    try{
+      const a = await axios.get(url)
+      setlistrender(a.data)
+    }
+    catch{
+      alert("loi api")
+    }
+  }
+  console.log(listrender?.main?.temp);
   return (
     <div className="product-area section">   
+
+
+      <div className='font'>Nhiệt độ là: {listrender?.main?.temp}<sup>0</sup>C</div>
+      <div className='font'>Tên thành phố {listrender?.name}</div>
+      <div className='font'>Tên quốc gia: {listrender?.sys?.country}</div>
+
+
       <section className="page-section" id="about">
         <div className="container">
               <div className="text-center">
