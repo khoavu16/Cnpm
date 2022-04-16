@@ -15773,14 +15773,12 @@ Version:1.0
 	color:#F7941D;
 }
 /* Copyright */
-.footer .copyright{
-	
-}
+
 .footer .copyright .inner{
 	border-top:1px solid #eeeeee3d;
 	padding:20px 0;
 }
-.footer .copyright .left{}
+
 .footer .copyright .right{
 	float:right;
 }
