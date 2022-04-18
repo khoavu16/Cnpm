@@ -1,21 +1,28 @@
-import React, { useEffect, useState } from 'react'
-import b4 from './img/b4.jfif';
-import { Outlet } from "react-router-dom"
+import{ useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
+// import { Outlet } from "react-router-dom"
 import restaurantApi from '../api/restaurant';
-import foodtApi from '../api/food';
+
 
 
 
 const FrameProduct = () => {
 
 
+  const [editId, setEditId] = useState(null);
   const [listrender, setlistrender] = useState([]);
-  const [food, setfood] = useState();
+  // const [food, setfood] = useState();
 
   useEffect(() => {
     getdatarestaurant();
-    getdatafood();
+    // getdatafood();
   }, []);
+
+  useEffect(() => {
+    getRestaurantId();
+  }, [editId]);
+ 
+ 
 
   const getdatarestaurant = async () =>{
     try{
@@ -27,50 +34,63 @@ const FrameProduct = () => {
     }
   }
 
-  const getdatafood = async () =>{
+  const getRestaurantId = async () =>{
     try{
-      const a = await foodtApi.getAllFood();
-      setfood(a.data);
+      const a = await restaurantApi.getRestaurant(editId);
     }
     catch{
       alert("loi api")
     }
   }
 
+  // const getdatafood = async () =>{
+  //   try{
+  //     const a = await foodtApi.getAllFood();
+  //     setfood(a.data);
+  //   }
+  //   catch{
+  //     alert("loi api")
+  //   }
+  // }
 
-  const renderFood = () => {
-    if(food){
-      return food.map((item,index)=>{
-        return (
-          <div class="single-list">
-            <div key={index} class="row">
-              <div class="col-lg-6 col-md-6 col-12">
-                <div class="list-image overlay">
-                  <img src="https://via.placeholder.com/115x140" alt="#"></img>
-                  <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-12 no-padding">
-                <div class="content">
-                  <h4 class="title"><a href="#">{item.nameFood}</a></h4>
-                  <p class="price with-discount">${item.priceFood}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        )
-      })
-    }
-  }
+
+  // const renderFood = () => {
+  //   if(food){
+  //     return food.map((item,index)=>{
+  //       return (
+  //         <div class="single-list">
+  //           <div key={index} class="row">
+  //             <div class="col-lg-6 col-md-6 col-12">
+  //               <div class="list-image overlay">
+  //                 <img src="https://via.placeholder.com/115x140" alt="#"></img>
+  //                 <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+  //               </div>
+  //             </div>
+  //             <div class="col-lg-6 col-md-6 col-12 no-padding">
+  //               <div class="content">
+  //                 <h4 class="title"><a href="#">{item.nameFood}</a></h4>
+  //                 <p class="price with-discount">${item.priceFood}</p>
+  //               </div>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       )
+  //     })
+  //   }
+  // }
   
   const renderRestaurant = () => {
     if(listrender){
       return listrender.map((item,index)=>{
         return (
-          <div key={index} className="col-xl-3 col-lg-4 col-md-4 col-12">
+          <Link 
+          key={index} 
+          className="col-xl-3 col-lg-4 col-md-4 col-12"
+          to={`/frameproduct/${item.idRestaurant}`}
+          >
             <div className="single-product">
               <div className="product-img">
-                <a href="product-details.html">
+                <a href="#">
                   <img className="img-fluid-chunhat" src={item.imagesRestaurants[0]?.urlRestaurant} alt="..." ></img>                
                 </a>
                 <div className="button-head">
@@ -91,13 +111,21 @@ const FrameProduct = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         )
       })
     }
   }
   return (
-    <div className="product-area section">   
+    <div className="product-area section">       
+      <header className="masthead">
+          <div className="container">
+              <div className="masthead-subheading">Chào mừng đến với chúng tôi!</div>
+              <div className="masthead-heading text-uppercase">GonT hân hạnh phục vụ</div>
+              <a className="btn btn-primary btn-xl text-uppercase" href="#services">Đặt chỗ ngay</a>
+          </div>
+      </header>
+
       <section className="page-section" id="about">
         <div className="container">
               <div className="text-center">
@@ -105,150 +133,6 @@ const FrameProduct = () => {
                   <h3 className="section-subheading text-muted line_h3">Trải nghiệm ngay khi đặt chỗ nhanh chóng.</h3>
               </div>
             <div className="row">{renderRestaurant()}</div>
-        </div>
-      </section>
-
-
-      <section class="shop-home-list section">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12">
-              <div class="row">
-                <div class="col-12">
-                  <div class="shop-section-title">
-                    <h1>On sale</h1>
-                  </div>
-                </div>
-              </div>
-
- 
-                {renderFood()}
- 
- 
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-              <div class="row">
-                <div class="col-12">
-                  <div class="shop-section-title">
-                    <h1>Best Seller</h1>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-list">
-                <div class="row">
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <div class="list-image overlay">
-                      <img src="https://via.placeholder.com/115x140" alt="#"></img>
-                      <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-12 no-padding">
-                    <div class="content">
-                      <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                      <p class="price with-discount">$65</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-list">
-                <div class="row">
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <div class="list-image overlay">
-                      <img src="https://via.placeholder.com/115x140" alt="#"></img>
-                      <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-12 no-padding">
-                    <div class="content">
-                      <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                      <p class="price with-discount">$33</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-list">
-                <div class="row">
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <div class="list-image overlay">
-                      <img src="https://via.placeholder.com/115x140" alt="#"></img>
-                      <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-12 no-padding">
-                    <div class="content">
-                      <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                      <p class="price with-discount">$77</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-              <div class="row">
-                <div class="col-12">
-                  <div class="shop-section-title">
-                    <h1>Top viewed</h1>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-list">
-                <div class="row">
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <div class="list-image overlay">
-                      <img src="https://via.placeholder.com/115x140" alt="#"></img>
-                      <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-12 no-padding">
-                    <div class="content">
-                      <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                      <p class="price with-discount">$22</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-list">
-                <div class="row">
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <div class="list-image overlay">
-                      <img src="https://via.placeholder.com/115x140" alt="#"></img>
-                      <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-12 no-padding">
-                    <div class="content">
-                      <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                      <p class="price with-discount">$35</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-list">
-                <div class="row">
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <div class="list-image overlay">
-                      <img src="https://via.placeholder.com/115x140" alt="#"></img>
-                      <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-12 no-padding">
-                    <div class="content">
-                      <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                      <p class="price with-discount">$99</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
         </div>
       </section>
     </div>

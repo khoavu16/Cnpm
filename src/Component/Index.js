@@ -14,9 +14,48 @@ import b4 from './img/b4.jfif';
 import phonganchinh from './img/phonganchinh.png';
 import terrace from './img/terrace.png';
 import twitter from './img/twitter.png';
+import{ useEffect, useState } from 'react'
+import restaurantApi from '../api/restaurant';
 
 
-function Index(props) {
+
+function Index() {
+    const [listrender, setlistrender] = useState([]);
+    const [getValue, setGetValue] = useState("");
+    
+
+    const onChageName = (e) => {
+        setGetValue(e.target.value)
+    }
+    const lookfor = async() => {
+        try{
+            const a = await restaurantApi.getAllRestarant();
+            setlistrender(a.data);
+        }
+          catch (error){
+            alert("loi api")
+        }
+    }
+
+    const renderInput = () => {
+        if(listrender){
+            return listrender.map((item,index)=>{
+              return (
+                <div className="header-search-history"
+                key={index} 
+                >
+                    <h3 className="header-search-history-heading">Linh Su Tim Kiem</h3>
+                    <ul className="header-search-history-list">
+                        <li className="header-search-history-item">
+                            <a href="">{item.nameRestaurant}</a>
+                        </li>
+                    </ul>
+                </div>
+              )
+            })
+        }
+    }
+    
   return (
     <div id="page-top">
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -45,21 +84,14 @@ function Index(props) {
                         <div className="header-search">
 
                             <div className="header-search-input-wrap">
-                                <input className="header-search-input" type="text" placeholder="Tìm kiếm" ></input>
-                                <div className="header-search-history">
-                                    <h3 className="header-search-history-heading">Linh Su Tim Kiem</h3>
-                                    <ul className="header-search-history-list">
-                                        <li className="header-search-history-item">
-                                            <a href="">Kem duong da</a>
-                                        </li>
-                                        <li className="header-search-history-item">
-                                            <a href="">Kem tri mun</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <input className="header-search-input" type="text" placeholder="Tìm kiếm" value={getValue} onChange={onChageName}></input>
+                                {renderInput()}
                             </div>
 
-                            <div className="header-search-btn">
+                            <div 
+                            className="header-search-btn" 
+                            onClick={lookfor}
+                            >
                                 <i className="header-search-btn-icon ti-search"></i>
                             </div>
                         </div>
@@ -330,13 +362,7 @@ function Index(props) {
 		</div>
     </nav>
 
-    <header className="masthead">
-        <div className="container">
-            <div className="masthead-subheading">Chào mừng đến với chúng tôi!</div>
-            <div className="masthead-heading text-uppercase">GonT hân hạnh phục vụ</div>
-            <a className="btn btn-primary btn-xl text-uppercase" href="#services">Đặt chỗ ngay</a>
-        </div>
-    </header>
+
 
 
 

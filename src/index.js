@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './App';
@@ -12,13 +11,12 @@ import ProductDetails from './Component/ProductDetails'
 import FrameProduct from './Component/FrameProduct';
 import './Component/css/shop.css'
 import './Component/css/home.css'
-// import'./Component/vendor/themify-icons/themify-icons.css'
-// import'./Component/vendor/fontawesome-free/css/all.min.css'
-// import './Component/vendor/MDB_4/css/bootstrap.min.css'
-// import './Component/vendor/MDB_4/css/mdb.min.css'
 import './Component/css/style.css'
 import './Component/css/styles.css'
 import './Component/vendor/fontawesome-free/css/all.min.css'
+
+import store from './store'
+import { Provider } from 'react-redux'
 
 
 
@@ -26,12 +24,14 @@ import './Component/vendor/fontawesome-free/css/all.min.css'
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>    
+      <Provider store={store}>
       <Routes>
         
         <Route path='/' element={<Index/>}>
-          <Route path='frameproduct' element={<FrameProduct/>}>        
-          </Route>          
-          <Route path='productdetails' element={<ProductDetails/>}></Route>
+          <Route path='/frameproduct' element={<FrameProduct/>}/>
+
+          <Route path='/frameproduct/:productId' element={<ProductDetails/>}/>
+
         </Route>
 
 
@@ -43,6 +43,7 @@ ReactDOM.render(
         </Route>
 
       </Routes>
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

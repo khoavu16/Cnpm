@@ -4,6 +4,11 @@ const getAllFood = () => {
     return axios.get('/food')
 };
 
+const getMenuFood = (id) => {
+    return axios.get(`/food/getAllFood/${id}`)
+};
+
 export default {
-    getAllFood
+    getAllFood,
+    getMenuFood
 };

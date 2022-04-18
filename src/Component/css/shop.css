@@ -817,7 +817,7 @@
     font-weight: 900;
     color: var(--text-color);
     margin: 0;
-    line-height: 2rem;
+    line-height: 1rem;
     max-height: 4rem;
     overflow: hidden;
     flex: 1;
