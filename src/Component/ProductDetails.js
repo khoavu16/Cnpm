@@ -1,44 +1,43 @@
 import React from 'react'
 import restaurantApi from '../api/restaurant';
 import { useEffect, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 import { Link, useParams } from 'react-router-dom';
 import { Slide } from 'react-slideshow-image';
 
 const ProductDetails = () => {
 
-    const Timer = () => {
-        const {initialMinute = 0,initialSeconds = 0} = props;
-        const [ minutes, setMinutes ] = useState(initialMinute);
-        const [seconds, setSeconds ] =  useState(initialSeconds);
-        useEffect(()=>{
-        let myInterval = setInterval(() => {
-                if (seconds > 0) {
-                    setSeconds(seconds - 1);
-                }
-                if (seconds === 0) {
-                    if (minutes === 0) {
-                        clearInterval(myInterval)
-                    } else {
-                        setMinutes(minutes - 1);
-                        setSeconds(59);
-                    }
-                } 
-            }, 1000)
-            return ()=> {
-                clearInterval(myInterval);
-              };
-        });
+    // const Timer = () => {
+        // const {initialMinute = 0,initialSeconds = 0} = props;
+        // const [ minutes, setMinutes ] = useState(initialMinute);
+        // const [seconds, setSeconds ] =  useState(initialSeconds);
+    //     useEffect(()=>{
+    //     let myInterval = setInterval(() => {
+    //             if (seconds > 0) {
+    //                 setSeconds(seconds - 1);
+    //             }
+    //             if (seconds === 0) {
+    //                 if (minutes === 0) {
+    //                     clearInterval(myInterval)
+    //                 } else {
+    //                     setMinutes(minutes - 1);
+    //                     setSeconds(59);
+    //                 }
+    //             } 
+    //         }, 1000)
+    //         return ()=> {
+    //             clearInterval(myInterval);
+    //           };
+    //     });
     
-        return (
-            <div>
-            { minutes === 0 && seconds === 0
-                ? null
-                : <h1> {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
-            }
-            </div>
-        )
-    }
+    //     return (
+    //         <div>
+    //         { minutes === 0 && seconds === 0
+    //             ? null
+    //             : <h1> {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
+    //         }
+    //         </div>
+    //     )
+    // }
 
 
 
@@ -67,13 +66,10 @@ const ProductDetails = () => {
 
 
     useEffect(() => {
-        if (Date.parse(date) < today.getTime()) alert('abc')
+        if (Date.parse(date)+100000000 < today.getTime()) {
+            alert("Vui lòng chọn lại ngày")
+        }
     }, [date])
-    
-
-    console.log(date);
-    
-
 
 return (
     <div className="up_top">
@@ -84,7 +80,12 @@ return (
 
                     <div className="col-md-12 slide-container mb-5 ">  
                         {listrender?.imagesRestaurants?.length > 0 ?                        
-                            <Slide>                          
+                            <Slide 
+                            infinite = {true}
+                            slidesToShow={3}
+                            slidesToScroll={1}
+                            dots={true}
+                            >                          
                                 {listrender.imagesRestaurants.map((item,index) => (
                                     <div 
                                     key={index}
@@ -100,11 +101,11 @@ return (
                     <div className=" row col-md-12">
                         <div className="col-md-9">
                             <div className="small mb-2">SKU: {listrender.idRestaurant}</div>
-                            <h1 className="display-2 fw-bolder mb-4">{listrender.nameRestaurant}</h1>
-                            <div className="fs-5 mb-2">
+                            <h1 className="display-2 fw-bolder mb-4 color_blue">{listrender.nameRestaurant}</h1>
+                            <div className="fs-5 mb-2 color_text">
                                 <span>Địa Chỉ: {listrender.addressRestaurant}</span>                            
                             </div>
-                            <div className="fs-5 mb-2">                      
+                            <div className="fs-5 mb-2 ">                      
                                 <span>Giá: ${listrender.priceService}</span>
                             </div>
                             <div className="fs-5 mb-5">                      
@@ -113,16 +114,12 @@ return (
                             
                             <p className="lead">{listrender?.descriptionRestaurant}</p>
                             <div className="d-flex">
-                                <button className="btn btn-outline-dark flex-shrink-0" type="button">
-                                    <i className="bi-cart-fill me-1"></i>
-                                    Đặt chỗ
-                                </button>
                                 <Link
                                 to={`/id/${listrender.idRestaurant}`}
                                 >
-                                    <button className="btn btn-outline-dark flex-shrink-0 menu" type="button">
+                                    <button className="btn btn-outline-dark flex-shrink- inputdate mt-5" type="button">
                                         <i className="bi-cart-fill me-1"></i>
-                                        Menu
+                                        Xem menu nhà hàng
                                     </button>                          
                                 </Link>
                             </div>
@@ -131,8 +128,13 @@ return (
                         <div className='col-md-3 nav'>
                             
                             <div className='box-book'>
+
+                            <div className="fs-3 color_text">                      
+                                <span>Thêm đặt chỗ</span>
+                            </div>
+
                                 <input 
-                                className='inputdate mt-5 col-md-12'
+                                className='inputdate mt-4 col-md-12'
                                 type="date" 
                                 value={date} 
                                 onChange={(e) => setDate(e.target.value)} 
@@ -141,11 +143,49 @@ return (
                                 <input 
                                 className='inputdate mt-4 col-md-12'
                                 type="time" 
-                                // value={date} 
-                                // onChange={(e) => setDate(e.target.value)} 
-                                ></input>      
+                                >
+                                </input>    
 
-                                {Timer()}                        
+
+                                <input 
+                                className='inputdate mt-4 col-md-12'
+                                placeholder='Email'
+                                type="email" 
+                                >
+                                </input>  
+
+                                <select  
+                                className='inputdate mt-4 col-md-12'
+                                >
+                                    <option value="">1 nguoi</option>
+                                    <option value="">2 nguoi</option>
+                                    <option value="">3 nguoi</option>
+                                    <option value="">4 nguoi</option>
+                                    <option value="">5 nguoi</option>
+                                    <option value="">6 nguoi</option>
+                                    <option value="">7 nguoi</option>
+                                    <option value="">8 nguoi</option>
+                                    <option value="">9 nguoi</option>
+                                    <option value="">10 nguoi</option>
+                                    <option value="">12 nguoi</option>
+                                    <option value="">13 nguoi</option>
+                                    <option value="">14 nguoi</option>
+                                    <option value="">15 nguoi</option>
+                                    <option value="">16 nguoi</option>
+                                    <option value="">17 nguoi</option>
+                                    <option value="">18 nguoi</option>
+                                    <option value="">19 nguoi</option>
+                                    <option value="">20 nguoi</option>
+                                </select > 
+
+
+
+                                <button className="btn btn-outline-dark flex-shrink-0 col-md-12 mt-5" type="button">
+                                    <i className="bi-cart-fill me-1"></i>
+                                    Đặt chỗ
+                                </button>
+
+
                             </div>
                             
                             

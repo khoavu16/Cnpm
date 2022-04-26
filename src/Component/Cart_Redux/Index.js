@@ -54,7 +54,7 @@ const Index =() => {
         <div className="col-lg-2 col-md-3 col-12 ">
             <div className="right-bar">
                 <div className="grid">
-                    <div className="header-with-search col-12">
+                    <div className="header-with-search col-md-12">
                         <div className="header-search">
 
                             <div className="header-search-input-wrap">

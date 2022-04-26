@@ -1492,3 +1492,9 @@ a {
     border-color:1px rgba(1,148,243,1.00);
     color: rgba(1,148,243,1.00);
 }
+.color_blue{
+    color: rgb(1, 148, 243);
+}
+.color_text{
+    color: #fd7e14;
+}
