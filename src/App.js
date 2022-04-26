@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom"
 import React, { useState } from 'react';
 
 function App() {
-    const [c, set] = useState(10);
+    const [c, set] = useState(0);
   return (
   
     <div id="page-top">

@@ -1,310 +1,262 @@
+import { Link, Outlet } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import phonganrieng from './img/phonganrieng.jfif';
+import viewxungquanh from './img/viewxungquanh.jfif';
+import bar from './img/bar.jfif';
+import noithat from './img/noithat.jfif';
+import voucher from './img/voucher.jfif';
+import b2 from './img/b2.jfif';
+import b3 from './img/b3.jfif';
+import b4 from './img/b4.jfif';
+import phonganchinh from './img/phonganchinh.png';
+import terrace from './img/terrace.png';
+import{ useEffect, useState } from 'react'
+import restaurantApi from '../api/restaurant';
+
+
 const Product = () => {
+
+    const {id} = useParams()
+    const [listrender, setlistrender] = useState([]);
+
+    useEffect(() => {
+        getdatarestaurant();
+    }, []);
+     
+    
+    const getdatarestaurant = async () =>{
+        try{
+          const a = await restaurantApi.getAllRestarant();
+          setlistrender(a.data);
+        }
+        catch{
+          alert("loi api")
+        }
+    }
+    
+    
+    const renderRestaurant = () => {
+        if(listrender){
+          return listrender.map((item,index)=>{
+            return (
+                <Link 
+                key={index} 
+                className="col-xl-3 col-lg-4 col-md-4 col-12"
+                to={`/${item.idRestaurant}`}
+                >
+                    <div className="single-product">
+                        <div className="product-img">
+                            <a href="#">
+                            <img className="img-fluid-chunhat" src={item.imagesRestaurants[0]?.urlRestaurant} alt="..." ></img>                
+                            </a>
+                            <div className="button-head">
+                            <div className="product-action">
+                                <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i className="ti-eye"></i><span>Xem sản phẩm</span></a>
+                                <a title="Wishlist" href="#"><i className=" ti-heart "></i><span>Số lượt thích: {item.likes}</span></a>
+                                <a title="Compare" href="#"><i className="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+                            </div>
+                            <div className="product-action-2">
+                                <a title="Add to cart" href="#">Đặt lịch ngay</a>
+                            </div>
+                            </div>
+                        </div>
+                        <div className="product-content">
+                            <h3><a href="product-details.html">{item.nameRestaurant}</a></h3>
+                            <div className="product-price">
+                            <span>${item.priceService}</span>
+                            </div>
+                        </div>
+                    </div>
+                </Link>
+            )
+          })
+        }
+    }
     return (
-		<header className="header">
-            <div className="grid">
-                <div className="header-with-search">
-                    <div className="header-search">
-
-                        <div className="header-search-input-wrap">
-                            <input type="text" className="header-search-input" placeholder="Tim o day ne"> </input>
-                            <div className="header-search-history">
-                                <h3 className="header-search-history-heading">Linh Su Tim Kiem</h3>
-                                <ul className="header-search-history-list">
-                                    <li className="header-search-history-item">
-                                        <a href="">Kem duong da</a>
-                                    </li>
-                                    <li className="header-search-history-item">
-                                        <a href="">Kem tri mun</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-
-                        <div className="header-search-select">
-                            <span className="header-search-select-label"> Trong Shop </span>
-                            <i className="header-search-select-label-i ti-angle-down"></i>
-                            <ul className="header-search-option">
-                                <li className="header-search-option-item header-search-option-item--active">
-                                    <span>Trong Shop</span>
-                                    <i className="ti-check"></i>
-                                </li>
-
-                                <li className="header-search-option-item">
-                                    <span>Ngoai Shop</span>
-                                    <i className="ti-check"></i>
-                                </li>
-                                
-                            </ul>
-                        </div>
-                        <div className="header-search-btn">
-                            <i className="header-search-btn-icon ti-search"></i>
-                        </div>
+		<div>
+            <div className="product-area section">       
+                <header className="masthead">
+                    <div className="container">
+                        <div className="masthead-subheading">Chào mừng đến với chúng tôi!</div>
+                        <div className="masthead-heading text-uppercase">GonT hân hạnh phục vụ</div>
+                        <a className="btn btn-primary btn-xl text-uppercase" href="#services">Đặt chỗ ngay</a>
                     </div>
+                </header>
 
-                    <div className="header-cart">
-
-                        <div className="header-cart-wrap">
-                            <i className="header__cart-icon ti-shopping-cart"></i>
-                            <span className="header__cart-notice">3</span>
-
-                            <div className="header__cart-list">
-                                <img src="playstore.jpg" alt="" className="header__cart-no-cart-img"></img>
-                                <span className="header__cart-list-no-cart-msg">Chua co san Phan</span>
-
-                                <h4 className="header__cart-heading">San pham da them</h4>
-                                <ul className="header__cart-list-item">
-
-                                    <li className="header__cart-item">
-                                        <img className="header__cart-img" src="https://cf.shopee.vn/file/0ea3a585736537879fbc6b48f5b724b9_tn"></img>
-                                        <div className="header__cart-item-info">
-                                            <div className="header__cart-item-head">
-                                                <h5 className="header__cart-item-name">Dong Ho RolexTay cầm gimbal DJI Osmo Mobile 4 Combo chống rung điện thoại - Hàng chính hãng - Bảo hành 12 thángTay cầm gimbal DJI Osmo Mobile 4 Combo chống rung điện thoại - Hàng chính hãng - Bảo hành 12 thángTay cầm gimbal DJI Osmo Mobile 4 Combo chống rung điện thoại - Hàng chính hãng - Bảo hành 12 thángTay cầm gimbal DJI Osmo Mobile 4 Combo chống rung điện thoại - Hàng chính hãng - Bảo hành 12 tháng</h5>
-                                                <div className="cach">
-                                                    <span className="header__cart-item-price">2.000.000</span>
-                                                    <span className="header__cart-item-multiply">x</span>
-                                                    <span className="header__cart-item-qnt">2</span>
-                                                </div>
-                                            </div>
-                                            <div className="header__cart-item-body">
-                                                <span className="header__cart-item-description">
-                                                    Phan Loai: Bac
-                                                </span>
-                                                <span className="header__cart-item-remove">Xoa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li className="header__cart-item">
-                                        <img className="header__cart-img" src="https://cf.shopee.vn/file/0ea3a585736537879fbc6b48f5b724b9_tn"></img>
-                                        <div className="header__cart-item-info">
-                                            <div className="header__cart-item-head">
-                                                <h5 className="header__cart-item-name">Dong Ho Rolex</h5>
-                                                <div className="cach">
-                                                    <span className="header__cart-item-price">2.000.000</span>
-                                                    <span className="header__cart-item-multiply">x</span>
-                                                    <span className="header__cart-item-qnt">2</span>
-                                                </div>
-                                            </div>
-                                            <div className="header__cart-item-body">
-                                                <span className="header__cart-item-description">
-                                                    Phan Loai: Bac
-                                                </span>
-                                                <span className="header__cart-item-remove">Xoa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li className="header__cart-item">
-                                        <img className="header__cart-img" src="https://cf.shopee.vn/file/0ea3a585736537879fbc6b48f5b724b9_tn"></img>
-                                        <div className="header__cart-item-info">
-                                            <div className="header__cart-item-head">
-                                                <h5 className="header__cart-item-name">Dong Ho Rolex</h5>
-                                                <div className="cach">
-                                                    <span className="header__cart-item-price">2.000.000</span>
-                                                    <span className="header__cart-item-multiply">x</span>
-                                                    <span className="header__cart-item-qnt">2</span>
-                                                </div>
-                                            </div>
-                                            <div className="header__cart-item-body">
-                                                <span className="header__cart-item-description">
-                                                    Phan Loai: Bac
-                                                </span>
-                                                <span className=" header__cart-item-remove">Xoa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li className="header__cart-item">
-                                        <img className="header__cart-img" src="https://cf.shopee.vn/file/0ea3a585736537879fbc6b48f5b724b9_tn"></img>
-                                        <div className="header__cart-item-info">
-                                            <div className="header__cart-item-head">
-                                                <h5 className="header__cart-item-name">Dong Ho Rolex</h5>
-                                                <div className="cach">
-                                                    <span className="header__cart-item-price">2.000.000</span>
-                                                    <span className="header__cart-item-multiply">x</span>
-                                                    <span className="header__cart-item-qnt">2</span>
-                                                </div>
-                                            </div>
-                                            <div className="header__cart-item-body">
-                                                <span className="header__cart-item-description">
-                                                    Phan Loai: Bac
-                                                </span>
-                                                <span className="header__cart-item-remove">Xoa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li className="header__cart-item">
-                                        <img className="header__cart-img" src="https://cf.shopee.vn/file/0ea3a585736537879fbc6b48f5b724b9_tn"></img>
-                                        <div className="header__cart-item-info">
-                                            <div className="header__cart-item-head">
-                                                <h5 className="header__cart-item-name">Dong Ho Rolex</h5>
-                                                <div className="cach">
-                                                    <span className="header__cart-item-price">2.000.000</span>
-                                                    <span className="header__cart-item-multiply">x</span>
-                                                    <span className="header__cart-item-qnt">2</span>
-                                                </div>
-                                            </div>
-                                            <div className="header__cart-item-body">
-                                                <span className="header__cart-item-description">
-                                                    Phan Loai: Bac
-                                                </span>
-                                                <span className="header__cart-item-remove">Xoa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li className="header__cart-item">
-                                        <img className="header__cart-img" src="https://cf.shopee.vn/file/0ea3a585736537879fbc6b48f5b724b9_tn"></img>
-                                        <div className="header__cart-item-info">
-                                            <div className="header__cart-item-head">
-                                                <h5 className="header__cart-item-name">Dong Ho Rolex</h5>
-                                                <div className="cach">
-                                                    <span className="header__cart-item-price">2.000.000</span>
-                                                    <span className="header__cart-item-multiply">x</span>
-                                                    <span className="header__cart-item-qnt">2</span>
-                                                </div>
-                                            </div>
-                                            <div className="header__cart-item-body">
-                                                <span className="header__cart-item-description">
-                                                    Phan Loai: Bac
-                                                </span>
-                                                <span className=" header__cart-item-remove">Xoa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li className="header__cart-item">
-                                        <img className="header__cart-img" src="https://cf.shopee.vn/file/0ea3a585736537879fbc6b48f5b724b9_tn"></img>
-                                        <div className="header__cart-item-info">
-                                            <div className="header__cart-item-head">
-                                                <h5 className="header__cart-item-name">Dong Ho Rolex</h5>
-                                                <div className="cach">
-                                                    <span className="header__cart-item-price">2.000.000</span>
-                                                    <span className="header__cart-item-multiply">x</span>
-                                                    <span className="header__cart-item-qnt">2</span>
-                                                </div>
-                                            </div>
-                                            <div className="header__cart-item-body">
-                                                <span className="header__cart-item-description">
-                                                    Phan Loai: Bac
-                                                </span>
-                                                <span className="header__cart-item-remove">Xoa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li className="header__cart-item">
-                                        <img className="header__cart-img" src="https://cf.shopee.vn/file/0ea3a585736537879fbc6b48f5b724b9_tn"></img>
-                                        <div className="header__cart-item-info">
-                                            <div className="header__cart-item-head">
-                                                <h5 className="header__cart-item-name">Dong Ho Rolex</h5>
-                                                <div className="cach">
-                                                    <span className="header__cart-item-price">2.000.000</span>
-                                                    <span className="header__cart-item-multiply">x</span>
-                                                    <span className="header__cart-item-qnt">2</span>
-                                                </div>
-                                            </div>
-                                            <div className="header__cart-item-body">
-                                                <span className="header__cart-item-description">
-                                                    Phan Loai: Bac
-                                                </span>
-                                                <span className="header__cart-item-remove">Xoa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li className="header__cart-item">
-                                        <img className="header__cart-img" src="https://cf.shopee.vn/file/0ea3a585736537879fbc6b48f5b724b9_tn"></img>
-                                        <div className="header__cart-item-info">
-                                            <div className="header__cart-item-head">
-                                                <h5 className="header__cart-item-name">Dong Ho Rolex</h5>
-                                                <div className="cach">
-                                                    <span className="header__cart-item-price">2.000.000</span>
-                                                    <span className="header__cart-item-multiply">x</span>
-                                                    <span className="header__cart-item-qnt">2</span>
-                                                </div>
-                                            </div>
-                                            <div className="header__cart-item-body">
-                                                <span className="header__cart-item-description">
-                                                    Phan Loai: Bac
-                                                </span>
-                                                <span className=" header__cart-item-remove">Xoa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li className="header__cart-item">
-                                        <img className="header__cart-img" src="https://cf.shopee.vn/file/0ea3a585736537879fbc6b48f5b724b9_tn"></img>
-                                        <div className="header__cart-item-info">
-                                            <div className="header__cart-item-head">
-                                                <h5 className="header__cart-item-name">Dong Ho Rolex</h5>
-                                                <div className="cach">
-                                                    <span className="header__cart-item-price">2.000.000</span>
-                                                    <span className="header__cart-item-multiply">x</span>
-                                                    <span className="header__cart-item-qnt">2</span>
-                                                </div>
-                                            </div>
-                                            <div className="header__cart-item-body">
-                                                <span className="header__cart-item-description">
-                                                    Phan Loai: Bac
-                                                </span>
-                                                <span className="header__cart-item-remove">Xoa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li className="header__cart-item">
-                                        <img className="header__cart-img" src="https://cf.shopee.vn/file/0ea3a585736537879fbc6b48f5b724b9_tn"></img>
-                                        <div className="header__cart-item-info">
-                                            <div className="header__cart-item-head">
-                                                <h5 className="header__cart-item-name">Dong Ho Rolex</h5>
-                                                <div className="cach">
-                                                    <span className="header__cart-item-price">2.000.000</span>
-                                                    <span className="header__cart-item-multiply">x</span>
-                                                    <span className="header__cart-item-qnt">2</span>
-                                                </div>
-                                            </div>
-                                            <div className="header__cart-item-body">
-                                                <span className="header__cart-item-description">
-                                                    Phan Loai: Bac
-                                                </span>
-                                                <span className="header__cart-item-remove">Xoa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li className="header__cart-item">
-                                        <img className="header__cart-img" src="https://cf.shopee.vn/file/0ea3a585736537879fbc6b48f5b724b9_tn"></img>
-                                        <div className="header__cart-item-info">
-                                            <div className="header__cart-item-head">
-                                                <h5 className="header__cart-item-name">Dong Ho Rolex</h5>
-                                                <div className="cach">
-                                                    <span className="header__cart-item-price">2.000.000</span>
-                                                    <span className="header__cart-item-multiply">x</span>
-                                                    <span className="header__cart-item-qnt">2</span>
-                                                </div>
-                                            </div>
-                                            <div className="header__cart-item-body">
-                                                <span className="header__cart-item-description">
-                                                    Phan Loai: Bac
-                                                </span>
-                                                <span className=" header__cart-item-remove">Xoa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ul>
-
-                                <button className="header__cart-view-cart btn btn--primary">Xem Gio Hang</button>
-                            </div>
+                <section className="page-section" id="about">
+                    <div className="container">
+                        <div className="text-center">
+                            <h2 className="section-heading text-uppercase">Điểm đặt được ưa thích</h2>
+                            <h3 className="section-subheading text-muted line_h3">Trải nghiệm ngay khi đặt chỗ nhanh chóng.</h3>
                         </div>
-
+                        <div className="row">{renderRestaurant()}</div>
                     </div>
-                </div>
+                </section>
             </div>
-        </header>
+            
+                <section className="page-section bg-light" id="portfolio">
+                    <div className="container">
+                        <div className="text-center">
+                            <h2 className="section-heading text-uppercase">Nhà hàng tiêu biểu</h2>
+                            <h3 className="section-subheading text-muted line_h3">GonT, nhà hàng mang phong cách trattoria, đã được nâng cấp thành phòng ăn của biệt thự, nơi lý tưởng để bạn gặp gỡ và giao lưu với bạn bè hay đối tác trong khung cảnh cổ điển với lối bài trí đương đại ấm cúng.</h3>
+                        </div>
+                        <div className="row">
+                            <div className="col-lg-4 col-sm-6 mb-4">
+                    
+                                <div className="portfolio-item">
+                                    <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                                        <div className="portfolio-hover">
+                                            <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
+                                        </div>
+                                        <img className="img-fluid" src={phonganchinh} alt="..." ></img>
+                                    </a>
+                                    <div className="portfolio-caption">
+                                        <div className="portfolio-caption-heading">Tajmasago Buffet</div>
+                                        <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-lg-4 col-sm-6 mb-4">
+                            
+                                <div className="portfolio-item">
+                                    <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                                        <div className="portfolio-hover">
+                                            <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
+                                        </div>
+                                        <img className="img-fluid" src={bar} alt="..." ></img>
+                                    </a>
+                                    <div className="portfolio-caption">
+                                        <div className="portfolio-caption-heading">The LOG Restaurant</div>
+                                        <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-lg-4 col-sm-6 mb-4">
+                            
+                                <div className="portfolio-item">
+                                    <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                                        <div className="portfolio-hover">
+                                            <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
+                                        </div>
+                                        <img className="img-fluid" src={noithat} alt="..." ></img>
+                                    </a>
+                                    <div className="portfolio-caption">
+                                        <div className="portfolio-caption-heading">Sorae Restaurant</div>
+                                        <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        
+                                <div className="portfolio-item">
+                                    <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                                        <div className="portfolio-hover">
+                                            <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
+                                        </div>
+                                        <img className="img-fluid" src={terrace} alt="..." ></img>
+                                    </a>
+                                    <div className="portfolio-caption">
+                                        <div className="portfolio-caption-heading"> Secret Garden</div>
+                                        <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        
+                                <div className="portfolio-item">
+                                    <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                                        <div className="portfolio-hover">
+                                            <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
+                                        </div>
+                                        <img className="img-fluid" src={phonganrieng} alt="..." ></img>
+                                    </a>
+                                    <div className="portfolio-caption">
+                                        <div className="portfolio-caption-heading">The Deck Saigon</div>
+                                        <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-lg-4 col-sm-6">
+                            
+                                <div className="portfolio-item">
+                                    <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                                        <div className="portfolio-hover">
+                                            <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
+                                        </div>
+                                        <img className="img-fluid" src={viewxungquanh} alt="..." ></img>
+                                    </a>
+                                    <div className="portfolio-caption">
+                                        <div className="portfolio-caption-heading">Shri – Rooftop</div>
+                                        <div className="portfolio-caption-subheading text-muted">Xem Thêm</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="page-section" id="about">
+                    <div className="container">
+                        <div className="text-center">
+                            <h2 className="section-heading text-uppercase">Áp dụng voucher</h2>
+                            <h3 className="section-subheading text-muted line_h3">Áp Dụng Voucher thật Đơn Giản.</h3>
+                        </div>
+                        <ul className="timeline">
+                            <li>
+                                <div className="timeline-image"><img className="rounded-circle img-fluid img-fluid-vuong" src={voucher} alt="..." ></img></div>
+                                <div className="timeline-panel">
+                                    <div className="timeline-heading">
+                                        <h4>Bước 1:</h4>
+                                        <h4 className="subheading">Nhận voucher</h4>
+                                    </div>
+                                    <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                                </div>
+                            </li>
+                            <li className="timeline-inverted">
+                                <div className="timeline-image"><img className="rounded-circle img-fluid img-fluid-vuong" src={b2} alt="..." ></img></div>
+                                <div className="timeline-panel">
+                                    <div className="timeline-heading">
+                                        <h4>Bước 2:</h4>
+                                        <h4 className="subheading">Nhập voucher vào phiếu thanh toán</h4>
+                                    </div>
+                                    <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="timeline-image"><img className="rounded-circle img-fluid img-fluid-vuong" src={b3} alt="..." ></img></div>
+                                <div className="timeline-panel">
+                                    <div className="timeline-heading">
+                                        <h4>Bước 3:</h4>
+                                        <h4 className="subheading">Chờ hệ thống áp dụng voucher</h4>
+                                    </div>
+                                    <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                                </div>
+                            </li>
+                            <li className="timeline-inverted">
+                                <div className="timeline-image"><img className="rounded-circle img-fluid img-fluid-vuong" src={b4} alt="..." ></img></div>
+                                <div className="timeline-panel">
+                                    <div className="timeline-heading">
+                                        <h4>Bước 4:</h4>
+                                        <h4 className="subheading">Tận hưởng dịch vụ tại GonT</h4>
+                                    </div>
+                                    <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                                </div>
+                            </li>
+                            <li className="timeline-inverted">
+                                <div className="timeline-image">
+                                    <h4>
+                                        Hen gặp
+                                        <br ></br>
+                                        lại bạn
+                                        <br ></br>
+                                        tại GonT
+                                    </h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+        </div>
 			
   )
 }
