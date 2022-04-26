@@ -92,10 +92,10 @@ const ProductDetails = () => {
         try {         
             console.log(date,time,name,tel);
             await restaurantApi.postBookRestaurant({
-                date: date,
-                time: time,
-                name: name,
-                tel: tel,
+                dateBook: date,
+                timeBook: time,
+                nameBook: name,
+                phoneBook: tel,git 
           });
           setTime("");
           setDate("");
