@@ -6,9 +6,19 @@ const getAllRestarant = () => {
 
 const getRestaurant = (id) => {
     return axios.get(`/restaurant/${id}`)
-}
+};
+
+const postBookRestaurant = () => {
+    return axios.post(`/bookrestaurant`)
+};
+
+const getBookRestaurant = () => {
+    return axios.get(`/bookrestaurant`)
+};
 
 export default {
     getAllRestarant,
-    getRestaurant
+    getRestaurant,
+    postBookRestaurant,
+    getBookRestaurant,
 };

@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const instance = axios.create({
     baseURL: 'http://localhost:3334/api',
-    // timeout: 000,
+    timeout: 1000,
 });
 // Config nhw nay, import vao thoi, có dùng accessToken thì check trong đây lun
 instance.interceptors.request.use(function (config) {

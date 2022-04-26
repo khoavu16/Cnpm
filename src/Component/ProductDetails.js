@@ -40,17 +40,18 @@ const ProductDetails = () => {
     // }
 
 
-
-
-
-    ///
     const today = new Date()
     const [listrender, setlistrender] = useState([]);
+    const [listBook, setListBook] = useState([]);
     const [date, setDate] = useState(today.toLocaleDateString('en-CA'))
+    const [time, setTime] = useState("")
+    const [name, setName] = useState("")
+    const [tel, setTel] = useState(0)
     const {productId} = useParams()
 
     useEffect(() => {
         getdatarestaurant();
+        // getBookReservations();
     }, []);
 
     const getdatarestaurant = async () =>{
@@ -63,6 +64,48 @@ const ProductDetails = () => {
         }
     }
 
+    // const getBookReservations = async () =>{
+    //     try{
+    //         const a = await restaurantApi.getBookRestaurant();
+    //         setListBook(a.data);
+    //     }
+    //     catch (error) {
+    //         alert(error)
+    //     }
+    // }
+
+
+    // const renderRestaurant = () => {
+    //     if(listBook){
+    //       return listBook.map((item,index)=>{
+    //         return (
+    //             <div>{item.nameBook}</div>
+    //         )
+    //       })
+    //     }
+    // }
+
+
+
+
+    const addReservations = async () => {
+        try {         
+            console.log(date,time,name,tel);
+            await restaurantApi.postBookRestaurant({
+                date: date,
+                time: time,
+                name: name,
+                tel: tel,
+          });
+          setTime("");
+          setDate("");
+          setName("");
+          setTel(0);
+        } catch (error) {
+          console.log("loi");
+        }
+      };
+
 
 
     useEffect(() => {
@@ -70,6 +113,9 @@ const ProductDetails = () => {
             alert("Vui lòng chọn lại ngày")
         }
     }, [date])
+
+
+
 
 return (
     <div className="up_top">
@@ -143,18 +189,34 @@ return (
                                 <input 
                                 className='inputdate mt-4 col-md-12'
                                 type="time" 
+                                value={time}
+                                onChange={(e)=> setTime(e.target.value)}
                                 >
-                                </input>    
+                                </input>   
+
 
 
                                 <input 
                                 className='inputdate mt-4 col-md-12'
-                                placeholder='Email'
-                                type="email" 
+                                placeholder='Họ và tên'
+                                type="name"
+                                value={name}
+                                onChange={(e)=> setName(e.target.value)}
                                 >
-                                </input>  
 
-                                <select  
+                                </input>
+
+
+                                <input 
+                                type="number" 
+                                className="inputdate mt-4 col-md-12"
+                                placeholder='Nhập số điện thoại'
+                                value={tel}
+                                onChange={(e)=> setTel(e.target.value)}
+                                ></input>
+ 
+
+                                {/* <select  
                                 className='inputdate mt-4 col-md-12'
                                 >
                                     <option value="">1 nguoi</option>
@@ -176,14 +238,20 @@ return (
                                     <option value="">18 nguoi</option>
                                     <option value="">19 nguoi</option>
                                     <option value="">20 nguoi</option>
-                                </select > 
+                                </select >  */}
 
 
 
-                                <button className="btn btn-outline-dark flex-shrink-0 col-md-12 mt-5" type="button">
+                                <button 
+                                className="btn btn-outline-dark flex-shrink-0 col-md-12 mt-5" 
+                                type="button"
+                                onClick={addReservations()}
+                                >
                                     <i className="bi-cart-fill me-1"></i>
                                     Đặt chỗ
                                 </button>
+
+                                {/* {renderRestaurant()} */}
 
 
                             </div>

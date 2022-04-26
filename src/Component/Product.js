@@ -30,7 +30,7 @@ const Product = () => {
           setlistrender(a.data);
         }
         catch{
-          alert("loi api")
+          alert("loi api Pruduct")
         }
     }
     
@@ -146,7 +146,7 @@ const Product = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                            <div className="col-lg-4 col-sm-6 mb-4 ">
                         
                                 <div className="portfolio-item">
                                     <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
@@ -161,7 +161,7 @@ const Product = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                            <div className="col-lg-4 col-sm-6 mb-4 ">
                         
                                 <div className="portfolio-item">
                                     <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
@@ -176,7 +176,7 @@ const Product = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-4 col-sm-6">
+                            <div className="col-lg-4 col-sm-6 mb-4">
                             
                                 <div className="portfolio-item">
                                     <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">

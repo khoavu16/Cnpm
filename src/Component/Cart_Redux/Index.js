@@ -22,13 +22,17 @@ const Index =() => {
         setGetValue(e.target.value)
     }
 
+    useEffect(() => {
+        getRestaurantId();
+    }, []);
+
     const getRestaurantId = async () =>{
         try{
           const a = await restaurantApi.getRestaurant(`${id}`);
           setlistlookfor(a.data)
         }
         catch{
-          alert("loi api")
+          console.log("loi api Index");
         }
     }
 
@@ -38,7 +42,9 @@ const Index =() => {
     <div id="page-top">
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div className="container">
-            <a className="navbar-brand" href="#page-top"><img src={logo} alt="..." ></img></a>
+            <Link to={"/"}>
+                <a className="navbar-brand" href="#page-top"><img src={logo} alt="..." ></img></a>
+            </Link>
             <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li className="nav-item"><a className="nav-link" href="#services">Services</a></li>
