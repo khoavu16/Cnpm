@@ -35,7 +35,6 @@ ReactDOM.render(
           </Route>
 
           
-
           <Route path='/cart' element={<Cart/>}></Route>
 
           

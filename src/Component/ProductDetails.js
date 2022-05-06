@@ -89,8 +89,7 @@ const ProductDetails = () => {
 
 
     const addReservations = async () => {
-        try {         
-            console.log(date,time,name,tel);
+        try {      
             await restaurantApi.postBookRestaurant({
                 idRestaurant:productId,
                 dateBook: date,
@@ -102,6 +101,7 @@ const ProductDetails = () => {
           setDate("");
           setName("");
           setTel(0);
+          console.log(productId,date,time,name,tel);
         } catch (error) {
           console.log("loi");
         }
@@ -114,8 +114,6 @@ const ProductDetails = () => {
             alert("Vui lòng chọn lại ngày")
         }
     }, [date])
-
-
 
 
 return (
@@ -246,7 +244,7 @@ return (
                                 <button 
                                 className="btn btn-outline-dark flex-shrink-0 col-md-12 mt-5" 
                                 type="button"
-                                onClick={addReservations()}
+                                onClick={addReservations}
                                 >
                                     <i className="bi-cart-fill me-1"></i>
                                     Đặt chỗ

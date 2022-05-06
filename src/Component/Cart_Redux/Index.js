@@ -65,7 +65,7 @@ const Index =() => {
 
                             <div className="header-search-input-wrap">
                                 <input className="header-search-input" type="text" placeholder="Tìm kiếm" 
-                                onClick={getRestaurantId()} 
+                                onClick={getRestaurantId} 
                                 value={getValue} 
                                 onChange={onChageName}></input>
                                 <div className="header-search-history">
